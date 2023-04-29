@@ -1,4 +1,39 @@
-body{
-    margin: 0;
-    text-align: center;
-}
+body {
+  margin: 0;
+  text-align: center; }
+  body #layout_body {
+    min-height: 90vh; }
+
+header {
+  align-items: center;
+  background-color: #2b6fdc;
+  display: flex;
+  justify-content: space-between; }
+  header h1 {
+    margin-left: 10px;
+    color: whitesmoke; }
+  header ul {
+    display: flex;
+    flex-direction: row; }
+  header li {
+    margin-right: 10px;
+    display: flex; }
+    header li a {
+      color: whitesmoke; }
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  background-color: grey;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; }
+  footer ul {
+    display: flex;
+    flex-direction: row; }
+  footer li {
+    margin-right: 10px;
+    display: flex; }
+    footer li a {
+      color: whitesmoke; }
+  footer h3 {
+    margin-left: 10px;
+    color: whitesmoke; }
