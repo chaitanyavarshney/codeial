@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const commentSchema = new mongoose.Schema({
     content: {
         type: String, 
-        required: True
+        required: true
     },
     //comment belongs to a user
     user: {
