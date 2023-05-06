@@ -1,13 +1,16 @@
 body {
   margin: 0; }
   body #layout_body {
-    min-height: 90vh; }
+    min-height: 90vh;
+    padding-left: 20px;
+    height: auto; }
 
 header {
   align-items: center;
   background-color: #2b6fdc;
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-between;
+  height: 80px; }
   header h1 {
     margin-left: 10px;
     color: whitesmoke; }
@@ -21,6 +24,7 @@ header {
       color: whitesmoke; }
 
 footer {
+  position: inherit;
   display: flex;
   justify-content: space-between;
   background-color: grey;

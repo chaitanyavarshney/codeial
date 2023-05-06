@@ -3,6 +3,11 @@ body{
     // text-align: center;
     #layout_body{
         min-height: 90vh; 
+        // display: flex;
+        // align-items: center;
+        // justify-content: center;
+        padding-left: 20px;
+        height: auto;
     }
       
 }
@@ -11,6 +16,9 @@ header{
     background-color:#2b6fdc;
     display: flex;
     justify-content: space-between;
+    height: 80px;
+    
+
     
     h1 {
         margin-left: 10px;
@@ -32,6 +40,7 @@ header{
     
 }
 footer{
+    position: inherit;
     display: flex;
     justify-content: space-between;
     ul{
