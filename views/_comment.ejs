@@ -2,10 +2,12 @@
     <p>
         <% if ((locals.user && locals.user.id == comment.user.id) || (locals.user && locals.user.id==post.user.id)){ %>
             <small>
-                <a href="/comments/destroy/<%= comment.id %>">X</a>
+                <a href="/comments/destroy/<%= comment.id %>">
+                    <i class="fa-solid fa-square-minus" style="color: #eb0000;"></i>   </a>
             </small>
             <% } %> 
-       <%= comment.content %> 
+            
+            &nbsp; <%= comment.content %> 
        <br>
        <small>
             <%= comment.user.name %>

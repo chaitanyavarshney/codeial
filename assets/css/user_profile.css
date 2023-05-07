@@ -32,12 +32,18 @@ input {
   padding: 40px;
   box-sizing: border-box;
   background: #ecf0f3;
-  box-shadow: 14px 14px 20px #cbced1; }
+  box-shadow: inset 10px 10px 10px #cbced1, inset -10px -10px 10px white;
+  cursor: pointer; }
+
+.container:hover {
+  box-shadow: inset 10px 10px 10px #bebbbb, inset -10px -10px 10px white; }
 
 .brand-logo {
   height: 150px;
   width: 150px;
-  margin: auto; }
+  margin: auto;
+  border-radius: 50%;
+  box-shadow: 7px 7px 10px #cbced1, -7px -7px 10px white; }
 
 .brand-title {
   margin-top: 10px;
