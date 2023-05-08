@@ -1,4 +1,5 @@
 const nodeMailer =  require('../config/nodemailer');
+const Comment = require('../models/comment')
 
 // this is another way of exporting a method
 exports.newComment = (comment) =>{

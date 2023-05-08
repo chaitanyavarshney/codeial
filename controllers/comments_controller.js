@@ -5,7 +5,7 @@ const commentsMailer =  require('../mailers/comments_mailer');
 module.exports.create = async function(req, res){
     try{
         let post = await Post.findById(req.body.post);
-        // let comment= await comment.populate('user','name email' ).exexPopulate();
+
 
             if (post){
                 let comment= await Comment.create({
@@ -15,7 +15,8 @@ module.exports.create = async function(req, res){
                 
                 });
                     //handle error
-                // commentsMailer.newComment(comment); 
+                comment= await comment.populate('user','name email' ).execPopulate();
+                commentsMailer.newComment(comment); 
                 post.comments.push(comment);
                 post.save();
                 req.flash('success', 'comment Posted');
