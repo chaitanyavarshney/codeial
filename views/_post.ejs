@@ -1,19 +1,32 @@
-<li id="post-<%= post._id %>">
-    <p><% if (locals.user && locals.user.id == post.user.id){ %>
-        <small>
-            
-            <a class="delete-post-button" href="/posts/destroy/<%= post.id %>">
-                <i class="fa-solid fa-trash" style="color: #0548bd;"></i>
-            </a>
+<li id="post-<%= post._id %>" class="posted">
+    <p>
+        <small id="post_user">
+            <div class="brand-logo">
+                <img class="brand-logo" src="<%= post.user.avatar %>" alt="<%= post.user.name %>" width="50">
+            </div>
+            <div>
+                <%= post.user.name %>
+            </div>
         </small>
-        <% } %>
+        <div id="right">
+        <% if (locals.user && locals.user.id == post.user.id){ %>
+            <small>
+                
+                <a class="delete-post-button" href="/posts/destroy/<%= post.id %>">
+                    <i class="fa-solid fa-trash" style="color: #0548bd;"></i>
+                </a>
+            </small>
+            <% } %>
+        </div>
+        
+        <br>
+        <div id="POST">
          <%= post.content%>
-        <br>
-        <small>
-            <%= post.user.name %>
-        </small>
-        <br>
-        <small>
+        </div>
+        
+        
+        
+        <div id ="likes_bar">
             <% if (locals.user){ %>
                 
                 <a class="toggle-like-button" data-likes="<%= post.likes.length %>" href="/likes/toggle/?id=<%=post._id%>&type=Post">
@@ -22,9 +35,9 @@
             <% }else{ %>
                 <%= post.likes.length %> Likes
             <% } %>
-        </small>
+        </div>
     </p>
-    <div class="posts-comments" id="posts-comments">
+    
         <% if (locals.user){ %>
             <form action="/comments/create" method="POST">
                 <input type="text" name="content" placeholder="Type here to add comment..." required>
@@ -33,7 +46,7 @@
             </form>
 
         <% } %>
-
+    <div class="posts-comments" id="posts-comments">
         <div class="post-comments-list">
             <ul id="post-comments-<%= post._id %>">
                 <% for (comment of post.comments){%>

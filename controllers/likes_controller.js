@@ -44,10 +44,11 @@ module.exports.toggleLike = async function(req,res){
             
             
         }
-        return res.json(200, {
+        return res.status(200).json({
             data: {
                 deleted: deleted
             }
+        
         })
         
 
