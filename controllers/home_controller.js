@@ -9,10 +9,18 @@ module.exports.home = async function(req, res){
         .populate('user')
         .populate({
             path: 'comments',
+            
             populate: {
-                path: 'user'
+                path: 'likes'
+            },
+           
+        }).populate('likes').populate({
+            path: 'comments',
+            populate: {
+              path: 'user'
             }
-        });
+          });
+        console.log(posts[0].comments[0])
         let users = await User.find({});
         
         return res.render('home', {
