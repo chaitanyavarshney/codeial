@@ -1,6 +1,7 @@
 <li id="post-<%= post._id %>">
     <p><% if (locals.user && locals.user.id == post.user.id){ %>
         <small>
+            
             <a class="delete-post-button" href="/posts/destroy/<%= post.id %>">
                 <i class="fa-solid fa-trash" style="color: #0548bd;"></i>
             </a>
@@ -10,6 +11,17 @@
         <br>
         <small>
             <%= post.user.name %>
+        </small>
+        <br>
+        <small>
+            <% if (locals.user){ %>
+                
+                <a class="toggle-like-button" data-likes="<%= post.likes.length %>" href="/likes/toggle/?id=<%=post._id%>&type=Post">
+                        <%= post.likes.length %> Likes
+                </a>
+            <% }else{ %>
+                <%= post.likes.length %> Likes
+            <% } %>
         </small>
     </p>
     <div class="posts-comments" id="posts-comments">
@@ -33,4 +45,4 @@
         </div>
     </div>
 </li>
-<!-- <script src = "/js/home_comment.js"></script> -->
+<script src = "/js/home_post_comment.js"></script>

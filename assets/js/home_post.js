@@ -4,6 +4,7 @@
         let newPostForm = $('#new-post-form');
         // console.log(newPostForm)
 
+
         newPostForm.submit(function(e){
             e.preventDefault();
             $.ajax({
@@ -14,6 +15,8 @@
                     let newPost= newPostDom(data.data.post,data.data.username);
                     $('#posts-list-container>ul').prepend(newPost);
                     deletePost($(' .delete-post-button, newPost'));
+
+                    newToggleLike($(' .toggle-like-button', newPost));
                 }, error: function(error){
                     console.log(error.responseText);
                 }
@@ -35,6 +38,14 @@
                         <br>
                         <small>
                         ${ username }
+                        </small>
+                        <br>
+                        <small>
+                        
+                            <a class="toggle-like-button" data-likes="0" href="/likes/toggle/?id=${post._id}%>&type=Post">
+                                    0 Likes
+                            </a>
+                        
                         </small>
                     </p>
                     <div class="posts-comments">
