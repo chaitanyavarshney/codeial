@@ -20,7 +20,7 @@ module.exports.home = async function(req, res){
               path: 'user'
             }
           });
-        console.log(posts[0].comments[0])
+        
         let users = await User.find({});
         
         return res.render('home', {

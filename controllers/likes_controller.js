@@ -28,17 +28,28 @@ module.exports.toggleLike = async function(req,res){
 
             existingLike.remove();
             deleted= true;
+            
+            
         }else{
             // make a new like'
             let newLike = await Like.create({
                 user: req.user._id,
                 likeable: req.query.id,
                 onModel: req.query.type
+                
             });
             likeable.likes.push(newLike._id);
             likeable.save();
             
+            
+            
         }
+        return res.json(200, {
+            data: {
+                deleted: deleted
+            }
+        })
+        
 
     }catch(err){
         console.log(err);
@@ -46,9 +57,4 @@ module.exports.toggleLike = async function(req,res){
             message: 'Internal Server Error'
         });
     }
-    // return res.json(200, {
-    //     data: {
-    //         deleted: deleted
-    //     }
-    // })
 }

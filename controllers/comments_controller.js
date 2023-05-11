@@ -8,20 +8,23 @@ const commentEmailWorker = require('../workers/comment_email_worker');
 module.exports.create = async function(req, res){
     try{
         let post = await Post.findById(req.body.post);
-
+            let comment;
 
             if (post){
-                let comment= await Comment.create({
+                    comment= await Comment.create({
                     content: req.body.content,
                     post: req.body.post,
                     user: req.user._id
                 
                 });
+
+               
+
                     //handle error
-                comment= await comment.populate('user','name email' ).populate();
+                // comment = await comment.populate('user','name email' );
                 // console.log(comment.user.name);
                 // commentsMailer.newComment(comment); 
-                let job = queue.create('emails', comment).save(function(err){
+                let job = queue.create('emails',{comment,email: req.user.email}).save(function(err){
 
 
                     if(err){
