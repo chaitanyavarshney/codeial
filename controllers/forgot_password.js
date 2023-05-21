@@ -26,9 +26,10 @@ module.exports.passnew = function(req,res){
                 const payload = {
                     email: user.email,
                     id: user.id
+
                 }
                 const token = jwt.sign(payload,secret, {expiresIn: '15m'})
-                const link  = `http://localhost:9000/users/reset-password/${user.id}/${token}`
+                const link  = `http://localhost:9000/users/reset-password/${user.email}/${token}`
                 
                 resetMailer.newComment(user.email,link); 
                 res.send("RESET LINK SENT TO EMAIL")
@@ -50,12 +51,64 @@ module.exports.passnew = function(req,res){
 }
 module.exports.passcheck = function(req,res){
     const {id,token} = req.params
-    return res.render('reset_pass',{
+   
+    // verify token b4 searching for user 
+    
+    User.findOne({email: id}, function(err, user){
+
+        // console.log(err)
+        try{
+            if (user){
+                
+                // console.log('ok')
+                return res.render('reset_pass',{
+                    user: user,
+                    title: user,
+                    token: token
+                } );
+                }
+            else{
+                console.log('not ok')
+                res.send("NO SUCH USER EXISTS")
+            }
+
+        }
+        catch(err){
+            console.log(err); return
+        }
+
         
-        title: 'change'
-    } );
+    });
     
     
 }
 
 
+module.exports.passcheck2 = function(req,res){
+    id = req.body.email;
+    
+    const password = req.body.pass;
+   
+    
+    User.findOne({email: id},async function(err, user){
+
+        
+        
+        // const secret = JWT_SECRET + user.password;
+        try{
+            // const payload = jwt.verify(token, secret)
+            user.password = password;
+            let user1 =   await User.findByIdAndUpdate(user._id,{password: password});
+            // console.log(user1,'$%$$')
+            // console.log(user.password,'*************')
+            res.send("password changed")
+            // res.send("PASSWORD CHANGED")
+            
+
+        }
+        catch(err){
+            console.log(err); return
+        }
+    });
+
+}

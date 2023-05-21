@@ -1,10 +1,15 @@
 <br>
 <br>
 
+<p id="email"> <%= user.email %> </p>
 
-<form action="/users/reset_pass" method="POST">
+<form action="/users/reset_pass/:token" method="POST">
+    <input type="email" name="email"  value="<%= user.email %>" hidden>
     <input type="password" name="pass" placeholder="New password"  required>
     <input type="submit" value="Change Password">
   
   </form>
   
+<script>
+  const id = document.getElementById("email").innerText;
+</script>
