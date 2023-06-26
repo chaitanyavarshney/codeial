@@ -1,5 +1,5 @@
 body {
-  background-color: #d3a7a7; }
+  background-color: #99dbf5; }
 
 label, input, button {
   border: none;
@@ -49,5 +49,5 @@ input {
   margin-top: 10px;
   font-weight: 900;
   font-size: 1.8rem;
-  color: #7c1f1f;
+  color: #2b303c;
   letter-spacing: 1px; }

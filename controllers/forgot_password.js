@@ -86,7 +86,6 @@ module.exports.passcheck = function(req,res){
 
 module.exports.passcheck2 = function(req,res){
     id = req.body.email;
-    
     const password = req.body.pass;
    
     

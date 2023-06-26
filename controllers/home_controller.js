@@ -1,5 +1,6 @@
 const Post = require('../models/post');
 const User = require('../models/user');
+const Friendship = require('../models/friendship');
 
 
 module.exports.home = async function(req, res){
@@ -26,7 +27,10 @@ module.exports.home = async function(req, res){
         return res.render('home', {
             title: "Codial | Home", 
             posts: posts,
-            all_users: users
+            all_users: users,
+            // friendship: friendship
+            
+
         });
 
     }catch(err){

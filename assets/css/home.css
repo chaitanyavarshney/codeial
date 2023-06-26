@@ -1,3 +1,6 @@
+body {
+  background-color: #99dbf5; }
+
 #home-container {
   display: flex; }
   #home-container #feed-posts {
@@ -7,31 +10,33 @@
     width: 30%;
     padding: 10px;
     border-left: 1px solid #dfb9b9;
-    height: 100vw; }
+    height: 100vw;
+    display: flex;
+    flex-direction: column; }
 
 a {
   text-decoration: none; }
 
 #posts-comments {
   border-left: 2px solid black;
-  background-color: #ffeaea;
+  background-color: #c2eafa;
   border-radius: 30px; }
 
 .posted {
   border-right: 2px solid black;
-  background-color: #ffd7d7;
+  background-color: #6cd3fc;
   border-radius: 10px; }
 
 #post {
-  border: 3px solid #ffd7d7;
+  border: 3px solid #6cd3fc;
   min-height: 40px;
-  background-color: #ffeaea; }
+  background-color: #c2eafa; }
 
 #commented {
   border-bottom: 2px solid #460101; }
 
 #likes_bar {
-  background-color: #ffd7d7; }
+  background-color: #67b7d6; }
 
 #post_user {
   display: flex;
