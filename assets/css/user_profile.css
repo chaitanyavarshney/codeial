@@ -57,7 +57,7 @@ input:hover {
   color: #2b303c;
   letter-spacing: 1px; }
 
-.toggle-friend-btn{
+.toggle-friend-btn {
   background: #ecf0f3;
   padding: 10px;
   padding-left: 20px;
@@ -66,5 +66,4 @@ input:hover {
   border-radius: 50px;
   box-shadow: inset 6px 6px 6px #d1cbcb, inset -6px -6px 6px white;
   border: 2px solid #0051ff;
-  text-decoration: none;
- }
+  text-decoration: None; }
