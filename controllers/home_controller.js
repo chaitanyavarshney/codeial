@@ -22,17 +22,21 @@ module.exports.home = async function(req, res){
               path: 'user'
             }
           });
-        
         let users = await User.find({});
-        
+        let logged_inuser = await User.findById(req.user._id);
+        let friends_of_user = await User.find({_id:{$in:logged_inuser.friends}})
+        console.log(friends_of_user,'************&&&&&&&&');
         return res.render('home', {
             title: "Codial | Home", 
             posts: posts,
+            friends_of_user : friends_of_user,
             all_users: users,
+            
             
             
 
         });
+
 
     }catch(err){
         console.log('Error',err);
