@@ -19,14 +19,7 @@
     </section>
     <section id="user-friends">
         <section id="user-lists">
-            <% if(locals.user){ %>
-                <h4>Friends</h4>
-                <% for(u of friends_of_user){%>
-                    <p>
-                        <a href="/users/profile/<%= u.id %>"><%= u.name %></a>
-                    </p>
-                <% } %>
-            <%} %>
+            
             
         </section>
         <section id="user-lists">
@@ -54,6 +47,6 @@
 <script src="/js/chat_engine.js"></script>
 <% if(locals.user){ %>
 <script>
-    newChatEngine('user-chat-box', '<%= locals.user._id %>')
+    new ChatEngine('user-chat-box', '<%= locals.user._id %>')
 </script>
 <% } %>
