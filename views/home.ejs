@@ -50,3 +50,10 @@
         
     });
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.1/socket.io.js"></script>
+<script src="/js/chat_engine.js"></script>
+<% if(locals.user){ %>
+<script>
+    newChatEngine('user-chat-box', '<%= locals.user._id %>')
+</script>
+<% } %>
