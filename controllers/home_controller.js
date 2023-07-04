@@ -8,7 +8,6 @@ module.exports.home = async function(req, res){
         let posts = await Post.find({})
         .sort('createdAt')
         .populate('user')
-        
         .populate({
             path: 'comments',
             
@@ -23,13 +22,13 @@ module.exports.home = async function(req, res){
             }
           });
         let users = await User.find({});
-        // let logged_inuser = await User.findById(req.user._id);
-        // let friends_of_user = await User.find({_id:{$in:logged_inuser.friends}})
-        // console.log(friends_of_user,'************&&&&&&&&');
+        let logged_inuser = await User.findById(req.user._id);
+        let friends_of_user = await User.find({_id:{$in:logged_inuser.friends}})
+        console.log(friends_of_user,'************&&&&&&&&');
         return res.render('home', {
             title: "Codial | Home", 
             posts: posts,
-            // friends_of_user : friends_of_user,
+            friends_of_user : friends_of_user,
             all_users: users,
             
             
@@ -61,11 +60,3 @@ module.exports.home = async function(req, res){
 // module.exports.actionName = function(req, res){}
 
 
-// <% if(locals.user){ %>
-//     <h4>Friends</h4>
-//     <% for(u of friends_of_user){%>
-//         <p>
-//             <a href="/users/profile/<%= u.id %>"><%= u.name %></a>
-//         </p>
-//     <% } %>
-// <%} %>

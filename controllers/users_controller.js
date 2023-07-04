@@ -94,7 +94,7 @@ module.exports.create = function(req, res){
     if (req.body.password != req.body.confirm_password){
         return res.redirect('back');
     }
-    console.log(req.body)
+    // console.log(req.body)
     
     User.findOne({email: req.body.email}, function(err, user){
         // console.log(err)

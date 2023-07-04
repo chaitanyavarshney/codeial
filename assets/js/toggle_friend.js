@@ -9,9 +9,13 @@ function toggleFriend(toggleFriendBtn){
             success : function(data){
                 console.log(data.deleted);
                 if(data.deleted){
-                    $(toggleFriendBtn).html("Add Friend")
+                    $(toggleFriendBtn).html("Add Friend"),
+                    $(toggleFriendBtn).css('color', 'blue'),
+                    $(toggleFriendBtn).css('border', '2px solid blue');
                 }else{
-                    $(toggleFriendBtn).html("Remove Friend")
+                    $(toggleFriendBtn).html("Remove Friend"),
+                    $(toggleFriendBtn).css('color', 'red'),
+                    $(toggleFriendBtn).css('border', '2px solid red');
                 }
                 
             },
