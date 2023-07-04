@@ -67,3 +67,5 @@ module.exports.destroy = async function(req, res){
     }
     
 }
+
+{/* <script src = "/js/home_post_comment.js"></script> */}
