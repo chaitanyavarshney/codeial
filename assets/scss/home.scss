@@ -72,7 +72,7 @@ a {
     // height: 300px;
     // width: 270px;
     position: sticky;
-    bottom: 0;
+    bottom: -35px;
     left: 95vw;
     // background-color:rgb(46, 84, 99);
     background-color: rgba(0, 0, 0, 0.4);
@@ -164,12 +164,12 @@ a {
 
 .text_input {
 	font-size: 16px;
-	position: absolute;
+	// position: absolute;
 	bottom: 0;
 	left: 0;
 	right: 0;
 	padding: 10px 15px;
-	width: 100%;
+	// width: 240px;
 }
 input{
     background: #ecf0f3;
@@ -184,5 +184,15 @@ input{
 #send-message{
     height: 20px;
     width: 20px;
+    
+}
+#chat_input{
+    // background-color: white;
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+
     
 }

@@ -24,7 +24,7 @@ module.exports.home = async function(req, res){
         let users = await User.find({});
         let logged_inuser = await User.findById(req.user._id);
         let friends_of_user = await User.find({_id:{$in:logged_inuser.friends}})
-        console.log(friends_of_user,'************&&&&&&&&');
+        // console.log(friends_of_user,'************&&&&&&&&');
         return res.render('home', {
             title: "Codial | Home", 
             posts: posts,

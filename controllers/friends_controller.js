@@ -10,7 +10,7 @@ module.exports.addFriend = async function(request , response){
     });
 
     let toUser = await Users.findById(request.query.id);
-    console.log(request.query.id)
+    // console.log(request.query.id)
     let fromUser = await Users.findById(request.user);
 
     let deleted = false;
