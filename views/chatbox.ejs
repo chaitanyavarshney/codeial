@@ -5,28 +5,26 @@
                 CHATBOX
             
         </div>
-        <div class="chat-container">
-            <ul class="chat">
-                <li class="message left">
-                    <!-- <img class="logo" src="https://randomuser.me/api/portraits/women/17.jpg" alt=""> -->
-                    <p>I'm hungry!</p>
-                </li>
-                <li class="message right">
+        <div class="chat-containerC">   
+
+        
+            <div class="chat-container">
+                <ul class="chat" id="chat-messages-list">
                     
-                    <p>Hi hungry, nice to meet you. I'm Dad.</p>
-                </li>
-            </ul>
-            <div id="chat_input">
-                <form  method="POST">
-                    <input type="text" class="text_input" placeholder="Type message here.."/>
-                    <input type="submit">
-    
-                </form>
+                </ul>
                 
-               
-                  
-            </div>  
+            </div>
         </div>
+        <div id="chat-message-input-container">
+                
+            <input type="text" class="text_input" id="chat-message-input"placeholder="Type message here.."/>
+            <input class="text_input" id="send-message" type="submit" value="send">
+
+        
+        
+       
+          
+    </div>  
         
     </div>
 <%} %>

@@ -96,10 +96,10 @@ module.exports.passcheck2 = function(req,res){
         // const secret = JWT_SECRET + user.password;
         try{
             // const payload = jwt.verify(token, secret)
-            user.password = password;
+           
             let user1 =   await User.findByIdAndUpdate(user._id,{password: password});
-            // console.log(user1,'$%$$')
-            // console.log(user.password,'*************')
+            user1.password = password;
+           
             res.send("password changed")
             // res.send("PASSWORD CHANGED")
             

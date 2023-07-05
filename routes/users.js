@@ -18,7 +18,7 @@ router.post('/forget_pass', forgot.passnew);
 // router.post('/forgot_pass', forgot.pass)
 router.get('/reset-password/:id/:token', forgot.passcheck);
 
-router.post('/reset_pass', forgot.passcheck2);
+router.post('/reset_pass/:token', forgot.passcheck2);
 
 
 
