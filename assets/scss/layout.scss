@@ -96,12 +96,13 @@ $button-active-blue: #1669F2;
     height: 18px;
   }
   .btn-text {
+    padding-left: 5px;
     float: right;
     margin: 11px 11px 0 0;
     color: $white;
     font-size: 14px;
     letter-spacing: 0.2px;
-    font-family: "Roboto";
+    font-family: Arial, Helvetica, sans-serif ;
   }
   &:hover {
     box-shadow: 0 0 6px $google-blue;

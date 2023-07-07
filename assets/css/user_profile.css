@@ -96,7 +96,8 @@ input:hover {
 .chatbox {
   display: flex;
   flex-direction: column;
-  max-height: 400px;
+  justify-content: space-between;
+  height: 350px;
   position: sticky;
   bottom: -10px;
   left: 95vw;

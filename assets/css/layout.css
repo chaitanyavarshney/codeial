@@ -66,12 +66,13 @@ footer {
     width: 18px;
     height: 18px; }
   .google-btn .btn-text {
+    padding-left: 5px;
     float: right;
     margin: 11px 11px 0 0;
     color: #fff;
     font-size: 14px;
     letter-spacing: 0.2px;
-    font-family: "Roboto"; }
+    font-family: Arial, Helvetica, sans-serif; }
   .google-btn:hover {
     box-shadow: 0 0 6px #4285f4; }
   .google-btn:active {
