@@ -84,7 +84,6 @@ module.exports.home = async function (request, response) {
             path: "to_user"
           })
       }
-      console.log(user.friends._id,"*&%^%^*%(&%(&%&%")
       
   
       return response.render("home", {

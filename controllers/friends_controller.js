@@ -10,14 +10,12 @@ module.exports.addFriend = async function(request , response){
     });
 
     let toUser = await Users.findById(request.query.id);
-    // console.log(request.query.id)
     let fromUser = await Users.findById(request.user);
 
     let deleted = false;
 
     if(existingFriendship){
 
-        // console.log(toUser,fromUser )
         toUser.friends.pull(existingFriendship._id);
         fromUser.friends.pull(existingFriendship._id);
         toUser.save();
@@ -43,8 +41,5 @@ module.exports.addFriend = async function(request , response){
             message : "Request Successful",
         });
     }
-
-
-    // console.log(populated_user);
     return response.redirect('back');
 }
